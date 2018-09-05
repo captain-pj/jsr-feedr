@@ -137,13 +137,14 @@ for (i=0; i < clickArticles.length; i++){
     var popUp = document.getElementById('popUp'),
         closePopUp = document.querySelector('.closePopUp'),
         popUpTitleSpot = document.querySelector('h2'),
-        popUpTextSpot = document.querySelector('.container p'),
+        popUpImageSpot = document.getElementById('image'),
         popUpButton = document.querySelector('.popUpAction');
   clickArticles[i].addEventListener('click', function(){
       popUp.classList.remove('hidden');
       popUpTitleSpot.innerHTML= this.children[1].children[0].children[0].innerText;
-      // popUpTextSpot.innerHTML='';
-      popUpButton.href=this.children[1].children[3].innerText;
+      console.log(this);
+      popUpImageSpot.innerHTML = this.children[0].innerHTML;
+      popUpButton.href=(this.children[1].children[3].innerText);
   });//end event listener
   closePopUp.addEventListener('click', function(){
       popUp.classList.add('hidden');
@@ -179,7 +180,7 @@ function successHandlerTimes(){
     var timesarticle =
     `<article class="article timesarticle">
         <section class="featuredImage">
-          <img src="${hitsTimes[i].multimedia[0].url}" alt=""/>
+
         </section>
         <section class="articleContent">
             <a href="#"><h3>${hitsTimes[i].title}</h3></a>
@@ -190,7 +191,6 @@ function successHandlerTimes(){
         <div class="clearfix"></div>
       </article>`;
       main.innerHTML += timesarticle;
-      console.log(hitsTimes);
 }//end for loop
 }//end successHandlerTimes
 
