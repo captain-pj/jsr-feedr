@@ -131,23 +131,22 @@ function successHandlerGuardian() {
        main.innerHTML += gaurdianarticle;
 }//end for loop
 //list of articles
-   var clickGaurdianArticles = document.querySelectorAll('.guardianarticle');
-    console.log(clickGaurdianArticles);
+   var clickArticles = document.querySelectorAll('.article');
 //article clicking
-for (i=0; i < clickGaurdianArticles.length; i++){
-    var popUpGaurdian = document.getElementById('popUp'),
-        closePopUpGaurdian = document.querySelector('.closePopUp'),
+for (i=0; i < clickArticles.length; i++){
+    var popUp = document.getElementById('popUp'),
+        closePopUp = document.querySelector('.closePopUp'),
         popUpTitleSpot = document.querySelector('h2'),
         popUpTextSpot = document.querySelector('.container p'),
         popUpButton = document.querySelector('.popUpAction');
-  clickGaurdianArticles[i].addEventListener('click', function(){
-      popUpGaurdian.classList.remove('hidden');
+  clickArticles[i].addEventListener('click', function(){
+      popUp.classList.remove('hidden');
       popUpTitleSpot.innerHTML= this.children[1].children[0].children[0].innerText;
-      popUpTextSpot.innerHTML='';
+      // popUpTextSpot.innerHTML='';
       popUpButton.href=this.children[1].children[3].innerText;
   });//end event listener
-  closePopUpGaurdian.addEventListener('click', function(){
-      popUpGaurdian.classList.add('hidden');
+  closePopUp.addEventListener('click', function(){
+      popUp.classList.add('hidden');
   });//end event listener
 }//end for loop
 }//end successhandler
@@ -165,14 +164,12 @@ function successHandlerYT(){
             <a href="#"><h3>${hitsYT[i].snippet.title}</h3></a>
             <h6>${hitsYT[i].snippet.tags[0]}</h6>
             <p>Source: YouTube</p>
+            <span class="hidden">"https://youtube.com/${hitsYT[i].snippet.channelTitle}"</span>
         </section>
         <div class="clearfix"></div>
       </article>`;
       main.innerHTML += YTvideo;
 }//end for loop
-  //list of articles
-     var clickYTVideos = document.querySelectorAll('.ytvideo');
-     console.log(clickYTVideos);
 }//end successHandlerYT
 
 function successHandlerTimes(){
@@ -182,27 +179,19 @@ function successHandlerTimes(){
     var timesarticle =
     `<article class="article timesarticle">
         <section class="featuredImage">
-
+          <img src="${hitsTimes[i].multimedia[0].url}" alt=""/>
         </section>
         <section class="articleContent">
             <a href="#"><h3>${hitsTimes[i].title}</h3></a>
-            <h6>${hitsTimes[i].des_facet[1]}</h6>
+            <h6>${hitsTimes[i].section}</h6>
             <p>Source: New York Times</p>
+            <span class="hidden">${hitsTimes[i].url}</span>
         </section>
         <div class="clearfix"></div>
       </article>`;
       main.innerHTML += timesarticle;
+      console.log(hitsTimes);
 }//end for loop
-//list of articles
-   var clickTimesArticles = document.querySelectorAll('.timesarticle');
-   console.log(clickTimesArticles);
-
-   //article clicking
-   for (i=0; i < clickTimesArticles.length; i++){
-     clickTimesArticles[i].addEventListener('click', function(){
-        console.log('wtf');
-     });//end event listener
-   }//end for loop
 }//end successHandlerTimes
 
 
