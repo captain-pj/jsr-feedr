@@ -1,16 +1,10 @@
-/* General styles */
-.container {
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
 #popUp {
   opacity: 0.95;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height:100%;
   background:  #fff;
 }
 
@@ -19,7 +13,7 @@
   top: 20px;
   right: 20px;
   font-size: 40px;
-  color: #FE052C;
+  color: #005A70;
   text-decoration: none;
 }
 
@@ -30,20 +24,20 @@
 }
 
 #popUp.loader .container {
-  display: none;
+
 }
 
 #popUp .container {
   margin-top: 80px;
 }
 
-#popUp h1 {
+#popUp h2 {
   margin-bottom: 0;
 }
 
 #popUp .popUpAction {
   padding: 10px;
-  background-color: #FE052C;
+  background-color: #76D5D4;
   color: #fff;
   text-decoration: none;
   border-radius: 5px;
@@ -53,13 +47,14 @@
 }
 
 #popUp .popUpAction:hover {
-  color: #FE052C;
+  color: #76D5D4;
   background: #fff;
 }
 
 /* Header styles */
 header {
-  background-color: #FE052C;
+  background-color: white;
+  box-shadow: 0 4px 2px -2px #E9E9E9;
   position: fixed;
   top: 0;
   left: 0;
@@ -67,7 +62,7 @@ header {
 }
 
 header h1 {
-  color: #FFF;
+  color: #005A70;
   padding: 10px 2%;
   margin: 0;
   width: 16%;
@@ -103,7 +98,7 @@ header #search a {
 }
 
 header #search a:hover {
-  background: #CC0020;
+  background: #005A70;
 }
 
 header #search img {
@@ -143,7 +138,7 @@ header nav a {
 
 header nav a:hover {
   background-color: #fff;
-  color: #CC0020;
+  color: #005A70;
 }
 
 nav ul {
@@ -156,7 +151,7 @@ nav ul {
 
 nav ul li {
 	display:inline-block;
-	background-color: #CC0020;
+	background-color: #005A70;
   position: relative;
 }
 
@@ -189,10 +184,10 @@ nav ul ul li {
 .article {
   border-bottom: 1px solid #ccc;
   transition: 0.2s all;
+  cursor: pointer;
 }
 
 .article:hover {
-  padding: 0 2%;
   background-color: #eee;
 }
 
@@ -219,19 +214,28 @@ nav ul ul li {
 
 .article .articleContent h3 {
   margin-bottom: 0;
-  color: #FE052C;
+  color: #005A70;
 }
 
 .article .articleContent h6 {
-  margin-top: 0;
+  margin: 0;
   color: #666;
 }
 
 .article .impressions {
   width: 15%;
   float: right;
-  font-size: 30px;
+  font-size: 10px;
   margin-top: 15px;
   text-align: right;
   color: #097FB2;
+}
+
+.article .articleContent p {
+  font-size: 10px;
+  color: #666;
+}
+
+.hidden{
+  display: none;
 }
